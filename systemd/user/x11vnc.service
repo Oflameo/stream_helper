@@ -4,7 +4,7 @@ Description=x11vnc service
 [Service]
 Type=forking
 EnvironmentFile=~/.config/systemd/user/x11vnc.env
-ExecStart=/usr/bin/x11vnc -nap -wait 50 -noxdamage -passwd $X11VNCPASSWD -viewpasswd $X11VNCVIEWPASSWD -display :0 -forever -o ~/x11vnc.log -bg -tag systemd user -zeroconf
+ExecStart=x11vnc -xkb -noxfixes -noxdamage -display :0 -passwd "$X11VNCPASSWD" -viewpasswd "X11VNCPASSWD" -forever -oa ~/x11vnc.log
 
 [Install]
 WantedBy=default.target
