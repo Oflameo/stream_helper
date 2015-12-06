@@ -1,2 +1,2 @@
 #!/bin/sh
-x11vnc -nap -wait 50 -noxdamage -passwd $X11VNCPASSWD -viewpasswd $X11VNCVIEWPASSWD -display :0 -forever -o /var/log/x11vnc.log -bg -tag default -zeroconf
+x11vnc -xkb -noxfixes -noxdamage -display :0 -auth /var/run/lightdm/root/:0 -passwd "$X11VNCPASSWD" -viewpasswd "X11VNCPASSWD" -forever -oa /var/log/x11vnc.log
